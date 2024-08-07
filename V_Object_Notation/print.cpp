@@ -1,5 +1,6 @@
-// dllmain.cpp : Defines the entry point for the DLL application.
 #include "pch.h"
+
+#include "print.h"
 
 BOOL APIENTRY DllMain( HMODULE hModule,
                        DWORD  ul_reason_for_call,
@@ -17,3 +18,7 @@ BOOL APIENTRY DllMain( HMODULE hModule,
     return TRUE;
 }
 
+void print(std::string message)
+{
+    std::cout << message << '\n';
+}
