@@ -1,1 +1,1 @@
-# V_Object_Notation
+# JavaScript Object Notation Clone (JSONC)
