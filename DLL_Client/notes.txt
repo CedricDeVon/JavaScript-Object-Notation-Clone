@@ -1,0 +1,296 @@
+
+    // READING FILES
+    //std::ifstream ifs("data.txt");
+    //if (!ifs.is_open())
+    //{
+    //    return;
+    //}
+    //std::ostringstream oss;
+    //oss << ifs.rdbuf();
+    //std::string entireFile = oss.str();
+    //std::cout << entireFile << '\n';
+    //for (char a : entireFile)
+    //{
+    //    std::cout << a << " : " << static_cast<int>(a) << '\n';
+    //}
+    //ifs.close();
+    
+
+
+    // WRITING FILES
+    /*
+    std::ofstream myfile;
+    myfile.open("example.txt");
+    if (!myfile.is_open())
+    {
+        return;    
+    }
+    std::string message = "...\n";
+    myfile << message;
+    myfile.close();
+    */
+
+
+
+    // APPENDING FILES
+    /*
+    std::ofstream myfile;
+    myfile.open("example.txt", std::ios_base::app);
+    if (!myfile.is_open())
+    {
+        return;    
+    }
+    std::string message = "...\n";
+    myfile << message;
+    myfile.close();
+    */
+
+
+
+
+//
+//template <typename Type>
+//class AA : public A
+//{
+//public:
+//    std::shared_ptr<Type> value;
+//    AA(Type*);
+//    virtual ~AA();
+//};
+//
+//template <typename Type> AA<Type>::AA(Type* value)
+//{
+//    this->value = std::make_shared<Type>(*value);
+//}
+//
+//template <typename Type> AA<Type>::~AA() {}
+
+
+//AA::~AA()
+//{
+//    //std::unordered_map<std::string, void*>::iterator currentPointer = this->attributes.begin();
+//    //std::unordered_map<std::string, void*>::iterator endPointer = this->attributes.end();
+//    //for (;currentPointer != endPointer; ++currentPointer)
+//    //{
+//    //    if (currentPointer->second != nullptr)
+//    //    {
+//    //        std::cout << currentPointer->first << '\n';
+//    //        delete currentPointer->second;
+//    //    }
+//    //}
+//}
+
+//void AB::removeAttribute(const std::string key)
+//{
+//    if (!this->attributes.contains(key))
+//    {
+//        throw std::runtime_error("Exception found at AB::removeAttributeValue()");
+//    }
+//
+//    void* attributeValuePointer = this->attributes[key];
+//    if (attributeValuePointer != nullptr)
+//    {
+//        delete attributeValuePointer;
+//    }
+//
+//    this->attributes.erase(key);
+//}
+//
+//void AB::clearAttributes()
+//{
+//    std::unordered_map<std::string, void*>::iterator currentPointer = this->attributes.begin();
+//    std::unordered_map<std::string, void*>::iterator endPointer = this->attributes.end();
+//    for (; currentPointer != endPointer; ++currentPointer)
+//    {
+//        if (currentPointer->second != nullptr)
+//        {
+//            this->removeAttribute(currentPointer->first);
+//        }
+//    }
+//}
+
+
+//
+//class AB : public A
+//{
+//protected:
+//    std::unordered_map<std::string, void*> attributes;
+//
+//public:
+//    AB();
+//    virtual ~AB();
+//    AB* getAttributeValue(const std::string);
+//    template <typename Type> const Type getAttributeValue(const std::string);
+//    template <typename Type> void setAttributeValue(const std::string, const Type);
+//    void removeAttribute(const std::string);
+//    void clearAttributes();
+//};
+//
+//AB::AB() {}
+//
+//AB::~AB()
+//{
+//    std::unordered_map<std::string, void*>::iterator currentPointer = this->attributes.begin();
+//    std::unordered_map<std::string, void*>::iterator endPointer = this->attributes.end();
+//    for (;currentPointer != endPointer; ++currentPointer)
+//    {
+//        if (currentPointer->second != nullptr)
+//        {
+//            delete currentPointer->second;
+//        }
+//    }
+//}
+//
+//AB* AB::getAttributeValue(const std::string key)
+//{
+//    if (!this->attributes.contains(key))
+//    {
+//        throw std::runtime_error("Exception found at AB::getAttributeValue()");
+//    }
+//
+//    return *static_cast<AB**>(this->attributes[key]);
+//}
+//
+//template <typename Type> const Type AB::getAttributeValue(const std::string key)
+//{
+//    if (!this->attributes.contains(key))
+//    {
+//        throw std::runtime_error("Exception found at AB::getAttributeValue()");
+//    }
+//
+//    return *static_cast<Type*>(this->attributes[key]);
+//}
+//
+//template <typename Type> void AB::setAttributeValue(const std::string key, const Type value)
+//{
+//    void* attributeValuePointer = this->attributes[key];
+//    if (this->attributes.contains(key) && attributeValuePointer != nullptr)
+//    {
+//        delete attributeValuePointer;
+//    }
+//
+//    this->attributes[key] = static_cast<void*>(new Type(value));
+//}
+//
+//void AB::removeAttribute(const std::string key)
+//{
+//    if (!this->attributes.contains(key))
+//    {
+//        throw std::runtime_error("Exception found at AB::removeAttributeValue()");
+//    }
+//
+//    void* attributeValuePointer = this->attributes[key];
+//    if (attributeValuePointer != nullptr)
+//    {
+//        delete attributeValuePointer;
+//    }
+//
+//    this->attributes.erase(key);
+//}
+//
+//void AB::clearAttributes()
+//{
+//    std::unordered_map<std::string, void*>::iterator currentPointer = this->attributes.begin();
+//    std::unordered_map<std::string, void*>::iterator endPointer = this->attributes.end();
+//    for (; currentPointer != endPointer; ++currentPointer)
+//    {
+//        if (currentPointer->second != nullptr)
+//        {
+//            this->removeAttribute(currentPointer->first);
+//        }
+//    }
+//}
+
+//
+//class AB : public A
+//{
+//protected:
+//    std::unordered_map<std::string, void*> attributes;
+//
+//public:
+//    AB();
+//    ~AB();
+//    void set(const std::string, AB*);
+//    template <typename Type> void set(const std::string, const Type);
+//    template <typename Type> const Type get(const std::string);
+//    /*const bool remove(const std::string);
+//    const bool findKey(const std::string);
+//    void clear();*/
+//};
+//
+//AB::AB() {}
+//
+//void AB::set(const std::string key, AB* value)
+//{
+//    void* pointer = (this->attributes.contains(key)) ? this->attributes[key] : nullptr;
+//    if (pointer != nullptr)
+//    {
+//        delete this->attributes[key];
+//    }
+//
+//    this->attributes[key] = value;
+//}
+//
+//template <typename Type> void AB::set(const std::string key, const Type value)
+//{
+//    void* pointer = (this->attributes.contains(key)) ? this->attributes[key] : nullptr;
+//    if (pointer != nullptr)
+//    {
+//        delete this->attributes[key];
+//    }
+//
+//    this->attributes[key] = static_cast<void*>(new Type(value));
+//}
+//
+//template <typename Type> const Type AB::get(const std::string key)
+//{
+//    if (!this->attributes.contains(key))
+//    {
+//        throw std::runtime_error("Exception found at AB::get()");
+//    }
+//
+//    return *static_cast<Type*>(this->attributes[key]);
+//}
+//
+//AB::~AB()
+//{
+//    std::unordered_map<std::string, void*>::iterator currentPointer = this->attributes.begin();
+//    std::unordered_map<std::string, void*>::iterator endPointer = this->attributes.end();
+//    for (; currentPointer != endPointer; ++currentPointer)
+//    {
+//        if (currentPointer->second != nullptr)
+//        {
+//            std::cout << currentPointer->first << '\n';
+//            delete currentPointer->second;
+//        }
+//    }
+//}
+
+//void AB::removeAttribute(const std::string key)
+//{
+//    if (!this->attributes.contains(key))
+//    {
+//        throw std::runtime_error("Exception found at AB::removeAttributeValue()");
+//    }
+//
+//    void* attributeValuePointer = this->attributes[key];
+//    if (attributeValuePointer != nullptr)
+//    {
+//        delete attributeValuePointer;
+//    }
+//
+//    this->attributes.erase(key);
+//}
+//
+//void AB::clearAttributes()
+//{
+//    std::unordered_map<std::string, void*>::iterator currentPointer = this->attributes.begin();
+//    std::unordered_map<std::string, void*>::iterator endPointer = this->attributes.end();
+//    for (; currentPointer != endPointer; ++currentPointer)
+//    {
+//        if (currentPointer->second != nullptr)
+//        {
+//            this->removeAttribute(currentPointer->first);
+//        }
+//    }
+//}

@@ -1,0 +1,43 @@
+<
+	<name "John">
+	<age 21>
+	<code 23.4564>
+	<is_married F>
+	<married_to ?>
+	<address
+		<street_address "21 2nd Street">
+		<city "New York">
+		<state "NY">
+		<postal_code "10021-3100">>
+	<sample_data
+	[
+		21, "code", T, ?,
+		<
+		      <type "home">
+		      <number "212 555-1234">
+		>
+	]>
+>
+<
+	<name "Smith">
+	<age 21>
+	<code 23.4564>
+	<is_married T>
+	<married_to "Jasmine">
+	<address
+		<street_address "21 2nd Street">
+		<city "New York">
+		<state "NY">
+		<postal_code "10021-3100">>
+	<sample_data
+	[
+		21,
+		"code",
+		F,
+		?,
+		<
+		      <type "home">
+		      <number "212 555-1234">
+		>
+	]>
+>
